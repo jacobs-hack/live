@@ -1,23 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <top-bar />
     <router-view/>
   </div>
 </template>
 
 <script>
+import TopBar from './components/TopBar.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TopBar
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+<style lang="sass">
+@import './assets/sass/global.sass';
+
+body
+  background: $black;
+  padding-top: 5em;
+
+#app
+  font-family: 'Source Sans Pro', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $white;
   margin-top: 60px;
-}
 </style>
