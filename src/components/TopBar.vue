@@ -72,8 +72,8 @@ export default {
   background-color: rgba($black, .3);
   height: 4em;
 
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   display: flex;
   justify-content: flex-start;
