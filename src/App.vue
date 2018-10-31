@@ -40,7 +40,7 @@ nav
     &:hover
       color: $white;
 
-    &.router-link-active
+    &.router-link-exact-active
       border-bottom: 5px solid $primary;
       color: $white;
 

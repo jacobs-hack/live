@@ -14,7 +14,7 @@ export default new Router({
       component: Announcements
     },
     {
-      path: 'you',
+      path: '/you',
       name: 'You',
       component: Social
     }
