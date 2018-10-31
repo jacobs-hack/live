@@ -36,15 +36,15 @@ nav
 
   h1
     cursor: pointer;
-    color: darken($white, 20%);
+    color: darken($text, 20%);
     transition: color 0.2s ease;
 
     &:hover
-      color: $white;
+      color: $text;
 
     &.router-link-exact-active
       border-bottom: 5px solid $primary;
-      color: $white;
+      color: $text;
 
     &:after
       content: "";
@@ -80,7 +80,7 @@ h1
   text-align: start;
 
 body
-  background: $black;
+  background: $base;
   padding-top: 4em;
   padding-left: 1em;
   padding-right: 1em;
@@ -91,5 +91,5 @@ body
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $white;
+  color: $text;
 </style>

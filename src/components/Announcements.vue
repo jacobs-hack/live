@@ -33,17 +33,17 @@ ul
   li
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: darken($white, 40%);
+    color: darken($text, 40%);
 
     &:nth-of-type(1)
-      color: $white;
+      color: $text;
       margin-bottom: 2rem;
 
       .text
         font-size: 3rem;
 
     &:nth-of-type(2)
-      color: darken($white, 20%);
+      color: darken($text, 20%);
       margin-bottom: 1.5rem;
 
       .text

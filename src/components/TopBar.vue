@@ -69,7 +69,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba($black, .3);
+  background-color: rgba($base, .3);
   height: 4em;
 
   padding-left: 1rem;

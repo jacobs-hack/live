@@ -35,7 +35,7 @@ div.event
     justify-content: space-between;
     align-items: flex-end;
 
-  border: 1px solid $white;
+  border: 1px solid $text;
   border-radius: 0 0 4px 4px;
 
 </style>
