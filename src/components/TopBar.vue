@@ -26,7 +26,7 @@ export default {
       }
 
       if (this.currentTime < startMillis) {
-        return 'Hackinh starts ' + moment(this.currentTime).to(startMillis)
+        return 'Hacking starts ' + moment(this.currentTime).to(startMillis)
       } else if (this.currentTime < endMillis) {
         return 'Hacking ends ' + moment(this.currentTime).to(endMillis)
       } else {
