@@ -1,6 +1,42 @@
 <script>
+import db from '@/firebase'
+import moment from 'moment'
+
 export default {
-  name: 'topbar'
+  name: 'topbar',
+  data: () => ({
+    timer: null,
+    currentTime: null
+  }),
+  firestore: {
+    timer: db.collection('timer').doc('OBBHkVUBfVam84gw55iU')
+  },
+  computed: {
+    humanTimer: function () {
+      const endTime = (this.timer || {}).expires
+      const endSecs = (endTime || {}).seconds
+      const endMillis = endSecs * 1000
+
+      const startTime = (this.timer || {}).starts
+      const startSecs = (startTime || {}).seconds
+      const startMillis = startSecs * 1000
+
+      if (!this.currentTime) {
+        return ''
+      }
+
+      if (this.currentTime < startMillis) {
+        return 'Hacking starts ' + moment(this.currentTime).to(startMillis)
+      } else if (this.currentTime < endMillis) {
+        return 'Hacking ends ' + moment(this.currentTime).to(endMillis)
+      } else {
+        return 'Hacking ended ' + moment(this.currentTime).to(endMillis)
+      }
+    }
+  },
+  created () {
+    setInterval(() => this.currentTime = new Date().valueOf(), 1000 * 1)
+  }
 }
 </script>
 
@@ -18,7 +54,7 @@ export default {
     </div>
     <div id="right">
       <slot name="right">
-        <h2 class="timer" title="Hacking time to go">12h 15m remaining</h2>
+        <h2 class="timer" title="Hacking time to go">{{ humanTimer }}</h2>
       </slot>
     </div>
   </div>
@@ -28,6 +64,7 @@ export default {
 @import '../assets/sass/global.sass'
 
 #topbar
+  font-family: 'Source Sans Pro';
   position: fixed;
   top: 0;
   left: 0;

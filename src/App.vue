@@ -1,7 +1,15 @@
 <template>
   <div id="app">
     <top-bar />
-    <router-view/>
+    <div id="menu">
+      <nav>
+        <router-link :tag="'h1'" :to="{name: 'News'}">News</router-link>
+        <router-link :tag="'h1'" :to="{name: 'You'}">You</router-link>
+      </nav>
+    </div>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -16,12 +24,46 @@ export default {
 }
 </script>
 
+<style lang="sass" scoped>
+@import "@/assets/sass/global.sass";
+
+nav
+  display: flex;
+  justify-content: flex-start;
+  border-sizing: border-box;
+
+  h1
+    cursor: pointer;
+    color: darken($white, 20%);
+    transition: color 0.2s ease;
+
+    &:hover
+      color: $white;
+
+    &.router-link-active
+      border-bottom: 5px solid $primary;
+      color: $white;
+
+    &:first-child
+      margin-left: 0;
+
+    margin: 0 0.5em;
+    font-family: 'Source Code Pro';
+    display: inline-block;
+</style>
+
 <style lang="sass">
 @import './assets/sass/global.sass';
 
+h1
+  text-align: start;
+
 body
   background: $black;
-  padding-top: 5em;
+  margin-top: 60px;
+  padding-top: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
 
 #app
   font-family: 'Source Sans Pro', Arial, sans-serif;
@@ -29,5 +71,4 @@ body
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $white;
-  margin-top: 60px;
 </style>
