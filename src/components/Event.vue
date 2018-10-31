@@ -1,7 +1,7 @@
 <template>
   <div class="event" :style="{minHeight: height}">
     <div class="details">
-      <h2 class="title">{{ event.title}}</h2>
+      <h3 class="title">{{ event.title}}</h3>
       <p class="desc">{{ event.description }}</p>
     </div>
     <div class="timings">
@@ -25,7 +25,7 @@ div.event
 
   text-align: start;
 
-  h2
+  h3
     margin: 0;
 
   div.timings
