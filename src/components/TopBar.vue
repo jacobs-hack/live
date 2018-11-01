@@ -54,7 +54,7 @@ export default {
     </div>
     <div id="right">
       <slot name="right">
-        <h2 class="timer" title="Hacking time to go">{{ humanTimer }}</h2>
+        <h3 class="timer" title="Hacking time to go">{{ humanTimer }}</h3>
       </slot>
     </div>
   </div>
