@@ -6,6 +6,9 @@
         <router-link :tag="'h1'" :to="{name: 'News'}">News</router-link>
         <router-link :tag="'h1'" :to="{name: 'You'}">You</router-link>
         <router-link :tag="'h1'" :to="{name: 'Schedule'}">Schedule</router-link>
+        <h1 v-for="link in links" :key='link.url'>
+          <a :href='link.url' target='_blank'>{{ link.title }}</a>
+        </h1>
       </nav>
     </div>
     <keep-alive>
@@ -17,10 +20,18 @@
 <script>
 import TopBar from '@/components/TopBar.vue'
 
+import db from '@/firebase.js'
+
 export default {
   name: 'App',
   components: {
     TopBar
+  },
+  data: () => ({
+    links: []
+  }),
+  firestore: {
+    links: db.collection('links')
   }
 }
 </script>
@@ -38,6 +49,10 @@ nav
     cursor: pointer;
     color: darken($text, 20%);
     transition: color 0.2s ease;
+
+    a
+      text-decoration: none;
+      color: inherit;
 
     &:hover
       color: $text;
