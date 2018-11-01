@@ -107,4 +107,9 @@ body
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $text;
+
+a.linkified
+  color: $secondary;
+  text-decoration: none;
+
 </style>

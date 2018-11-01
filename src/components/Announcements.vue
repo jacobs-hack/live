@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="announcement in announcements" :key="announcement.id">
-        <span class="text">{{ announcement.text }}</span>
+        <span class="text" v-html='announcement.text' v-linkified />
         <span class="date">{{ (announcement.created || {}).seconds | moment("dddd HH:mm") }}</span>
       </li>
     </ul>
@@ -60,6 +60,5 @@ ul
 
     .text
       font-size: 2rem;
-      text-align: start;
 
 </style>

@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 import VueFire from 'vuefire'
 import VueMoment from 'vue-moment'
+import VueLinkify from 'vue-linkify'
 
 Vue.config.productionTip = false
 Vue.use(VueFire)
 Vue.use(VueMoment)
+Vue.directive('linkified', VueLinkify)
 
 /* eslint-disable no-new */
 new Vue({
