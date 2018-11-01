@@ -28,6 +28,9 @@ export default {
     tracks: function () {
       return [...new Set(this.events.map(event => event.track))]
     }
+  },
+  created() {
+    setTimeout(() => (this.now = new Date().valueOf()), 1000 * 30)
   }
 }
 </script>
