@@ -2,7 +2,7 @@
   <div id="schedule">
     <div class="track" v-for="track in tracks" :key="track">
       <h2>{{ track }}</h2>
-      <event v-for="event in events.filter(event => event.track === track)" :key="track +  ':' + event.title" :event="event" :now="now" />
+      <event v-show="event.ends.seconds * 1000 > now" v-for="event in events.filter(event => event.track === track)" :key="track +  ':' + event.title" :event="event" :now="now" />
     </div>
   </div>
 </template>

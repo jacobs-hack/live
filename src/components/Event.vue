@@ -1,5 +1,5 @@
 <template>
-  <div class="event" :style="{minHeight: height}">
+  <div class="event" :style="{minHeight: height}" :class="evClass">
     <div class="details">
       <h3 class="title">{{ event.title}}</h3>
       <p class="desc">{{ event.description }}</p>
@@ -24,6 +24,20 @@ div.event
   justify-content: space-between;
 
   text-align: start;
+
+  &.highlight
+    background-color: $secondary;
+    border-color: $secondary;
+    animation: fade-animation 1s ease alternate infinite;
+
+  @keyframes fade-animation
+    from
+      background-color: $secondary;
+      border-color: $secondary;
+
+    to
+      background-color: darken($secondary, 20%);
+      border-color: darken($secondary, 20%);
 
   h3
     margin: 0;
@@ -73,6 +87,15 @@ export default {
       } else {
         return s.format('ddd HH:mm')
       }
+    },
+    evClass: function () {
+      if((this.now > (this.event.starts.seconds * 1000 - 600)) && ((this.now < (this.event.ends.seconds * 1000 + 600)))) {
+        return {
+          'highlight': true
+        }
+      }
+
+      return {}
     }
   }
 }
