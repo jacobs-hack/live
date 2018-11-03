@@ -5,8 +5,8 @@
       <p class="desc">{{ event.description }}</p>
     </div>
     <div class="timings">
-      <span class="duration">{{ duration }}</span>
       <span class="startsin">{{ startsin }}</span>
+      <span class="duration">{{ duration }}</span>
     </div>
   </div>
 </template>
@@ -71,7 +71,7 @@ export default {
       } else if(e.isBefore(this.now)) {
         return 'has ended'
       } else {
-        return s.from(this.now)
+        return s.format('ddd HH:mm')
       }
     }
   }
