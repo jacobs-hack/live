@@ -6,6 +6,7 @@
         <router-link :tag="'h1'" :to="{name: 'News'}">News</router-link>
         <router-link :tag="'h1'" :to="{name: 'You'}">You</router-link>
         <router-link :tag="'h1'" :to="{name: 'Schedule'}">Schedule</router-link>
+        <router-link :tag="'h1'" :to="{name: 'Map'}">Map</router-link>
         <h1 v-for="link in links" :key='link.url'>
           <a :href='link.url' target='_blank'>{{ link.title }}</a>
         </h1>

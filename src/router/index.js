@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Announcements from '@/components/Announcements'
 import Social from '@/components/Social'
 import Schedule from '@/components/Schedule'
+import VenueMap from '@/components/Map'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/schedule',
       name: 'Schedule',
       component: Schedule
+    },
+    {
+      path: '/map',
+      name: 'Map',
+      component: VenueMap
     }
   ]
 })
